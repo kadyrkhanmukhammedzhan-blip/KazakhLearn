@@ -138,6 +138,28 @@
             margin-right: 5px;
         }
 
+        /* Daily Streak */
+        .daily-streak {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #ffcc00;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .daily-streak:hover {
+            transform: scale(1.05);
+        }
+
+        .daily-streak i {
+            color: #ff9800;
+        }
+
         /* Main Content */
         .main-content {
             display: flex;
@@ -261,6 +283,71 @@
             background-color: var(--primary-dark);
         }
 
+        /* Daily Challenge Card */
+        .daily-card {
+            background: linear-gradient(135deg, #ffcc00, #ff9800);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .daily-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 1%);
+            background-size: 20px 20px;
+            transform: rotate(30deg);
+            opacity: 0.3;
+        }
+
+        .daily-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .daily-info p {
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .daily-timer {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: rgba(0,0,0,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .start-daily-btn {
+            background-color: white;
+            color: #ff9800;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1;
+        }
+
+        .start-daily-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
         /* Skills Tree */
         .skills-tree {
             margin-bottom: 30px;
@@ -357,6 +444,232 @@
             font-size: 1.8rem;
         }
 
+        /* Daily Challenge Section */
+        .daily-section-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .daily-section-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .daily-challenge-main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .daily-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .daily-stat {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .daily-stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .daily-stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .daily-calendar {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .calendar-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .calendar-day.empty {
+            background-color: transparent;
+        }
+
+        .calendar-day.completed {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .calendar-day.current {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .calendar-day.future {
+            background-color: #e9ecef;
+            color: #999;
+        }
+
+        /* Daily Challenge Modal */
+        .daily-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .daily-modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .daily-modal-header {
+            background: linear-gradient(135deg, #ffcc00, #ff9800);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .daily-modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .daily-modal-subtitle {
+            opacity: 0.9;
+        }
+
+        .daily-modal-body {
+            padding: 30px;
+        }
+
+        .daily-challenge-timer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+
+        .daily-question {
+            margin-bottom: 30px;
+        }
+
+        .daily-question-text {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .daily-options {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .daily-option {
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .daily-option:hover {
+            border-color: var(--secondary-color);
+            background-color: #f0f9ff;
+        }
+
+        .daily-option.correct {
+            border-color: var(--primary-color);
+            background-color: #e8f5e9;
+        }
+
+        .daily-option.incorrect {
+            border-color: #ff5252;
+            background-color: #ffebee;
+        }
+
+        .daily-modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .daily-xp-reward {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #ff9800;
+            font-weight: 600;
+        }
+
+        .daily-next-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .daily-next-btn:hover {
+            background-color: #0a9bd6;
+        }
+
+        .daily-next-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -631,6 +944,10 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            
+            .daily-streak {
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -644,6 +961,10 @@
                     <span>KazakhLearn</span>
                 </div>
                 <div class="user-info">
+                    <div class="daily-streak" id="dailyStreakBtn">
+                        <i class="fas fa-fire"></i>
+                        <span id="streakCount">5</span> дней
+                    </div>
                     <div class="xp-display">
                         <i class="fas fa-star"></i>
                         <span id="userXP">125</span> XP
@@ -680,6 +1001,10 @@
                         <i class="fas fa-home"></i>
                         <span>Главная</span>
                     </div>
+                    <div class="menu-item" data-section="daily">
+                        <i class="fas fa-fire"></i>
+                        <span>Ежедневка</span>
+                    </div>
                     <div class="menu-item" data-section="lessons">
                         <i class="fas fa-book-open"></i>
                         <span>Уроки</span>
@@ -714,6 +1039,18 @@
             <div class="lessons-area">
                 <!-- Главная страница -->
                 <div class="content-section active" id="homeSection">
+                    <div class="daily-card">
+                        <div class="daily-info">
+                            <h3>Ежедневный вызов</h3>
+                            <p>Пройдите ударный режим сегодня и получите бонусные очки!</p>
+                            <div class="daily-timer" id="dailyTimer">До сброса: 14:32:11</div>
+                        </div>
+                        <button class="start-daily-btn" id="startDailyBtn">
+                            <i class="fas fa-bolt"></i>
+                            Начать вызов
+                        </button>
+                    </div>
+
                     <div class="welcome-card">
                         <h1 class="welcome-title">Сәлем! Давайте учить казахский!</h1>
                         <p class="welcome-subtitle">Пройдите 10 минут в день, чтобы выучить казахский язык. Начните с основ и постепенно повышайте уровень.</p>
@@ -727,6 +1064,66 @@
                         <h2 class="section-title">Дерево навыков</h2>
                         <div class="skills-container" id="skillsContainer">
                             <!-- Навыки будут загружены через JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Раздел Ежедневка -->
+                <div class="content-section" id="dailySection">
+                    <h2><i class="fas fa-fire" style="color: #ff9800; margin-right: 10px;"></i>Ежедневный вызов</h2>
+                    <p>Пройдите ударный режим, чтобы сохранить свою серию и получить бонусные очки опыта!</p>
+                    
+                    <div class="daily-section-content">
+                        <div class="daily-challenge-main">
+                            <div class="daily-card">
+                                <div class="daily-info">
+                                    <h3>Сегодняшний вызов</h3>
+                                    <p>Ответьте правильно на 10 вопросов за 3 минуты</p>
+                                    <div class="daily-timer" id="dailyTimer2">До сброса: 14:32:11</div>
+                                </div>
+                                <button class="start-daily-btn" id="startDailyBtn2">
+                                    <i class="fas fa-bolt"></i>
+                                    Начать вызов
+                                </button>
+                            </div>
+                            
+                            <div class="daily-stats">
+                                <div class="daily-stat">
+                                    <div class="daily-stat-value" id="dailyStreakValue">5</div>
+                                    <div class="daily-stat-label">Дней подряд</div>
+                                </div>
+                                <div class="daily-stat">
+                                    <div class="daily-stat-value" id="dailyCompleted">12</div>
+                                    <div class="daily-stat-label">Вызовов пройдено</div>
+                                </div>
+                                <div class="daily-stat">
+                                    <div class="daily-stat-value" id="dailyBest">8</div>
+                                    <div class="daily-stat-label">Лучший счет</div>
+                                </div>
+                                <div class="daily-stat">
+                                    <div class="daily-stat-value" id="dailyXpEarned">350</div>
+                                    <div class="daily-stat-label">XP заработано</div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3>Правила ежедневного вызова</h3>
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>Ответьте на как можно больше вопросов за 3 минуты</li>
+                                    <li>Каждый правильный ответ дает +10 XP</li>
+                                    <li>Неправильный ответ не отнимает очки, но тратит время</li>
+                                    <li>Завершите вызов, чтобы сохранить свою серию дней</li>
+                                    <li>За каждый день подряд вы получаете бонусные очки</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="daily-calendar">
+                            <h3 class="calendar-title">Ваша серия</h3>
+                            <p style="margin-bottom: 15px; color: var(--text-light);">Каждый день отмечается зеленым, если вы прошли вызов</p>
+                            <div class="calendar-grid" id="calendarGrid">
+                                <!-- Календарь будет заполнен через JavaScript -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -919,6 +1316,41 @@
         </div>
     </div>
 
+    <!-- Daily Challenge Modal -->
+    <div class="daily-modal" id="dailyModal">
+        <div class="daily-modal-content">
+            <div class="daily-modal-header">
+                <h2 class="daily-modal-title">Ежедневный вызов</h2>
+                <p class="daily-modal-subtitle">Ответьте на как можно больше вопросов за 3 минуты!</p>
+            </div>
+            <div class="daily-modal-body">
+                <div class="daily-challenge-timer">
+                    <p>Оставшееся время:</p>
+                    <div class="timer-display" id="timerDisplay">03:00</div>
+                    <p>Правильных ответов: <span id="correctAnswers">0</span> из <span id="totalQuestions">10</span></p>
+                </div>
+
+                <div class="daily-question" id="dailyQuestion1">
+                    <div class="daily-question-text" id="dailyQuestionText">Как будет "Привет" на казахском?</div>
+                    <div class="daily-options">
+                        <div class="daily-option" data-correct="true">Сәлем</div>
+                        <div class="daily-option" data-correct="false">Рахмет</div>
+                        <div class="daily-option" data-correct="false">Кешіріңіз</div>
+                        <div class="daily-option" data-correct="false">Жақсы</div>
+                    </div>
+                </div>
+
+                <div class="daily-modal-footer">
+                    <div class="daily-xp-reward">
+                        <i class="fas fa-star"></i>
+                        <span>+10 XP за каждый правильный ответ</span>
+                    </div>
+                    <button class="daily-next-btn" id="dailyNextBtn" disabled>Следующий вопрос</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Lesson Modal -->
     <div class="lesson-modal" id="lessonModal">
         <div class="modal-content">
@@ -1006,8 +1438,9 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2025 KazakhLearn. Все права защищены. Этот проект является учебным и не коммерческим.</p>
+                <p>© 2023 KazakhLearn. Все права защищены. Этот проект является учебным и не коммерческим.</p>
                 <p>Сделано с ❤️ для изучения казахского языка</p>
+                <p>Email для связи: kadyrkhan.mukhammedzhan@gmail.com</p>
             </div>
         </div>
     </footer>
@@ -1084,45 +1517,34 @@
                     { question: "Как будет 'три' на казахском?", options: ["Бір", "Екі", "Үш", "Төрт"], correct: 2 },
                     { question: "Как будет 'пять' на казахском?", options: ["Төрт", "Бес", "Алты", "Жеті"], correct: 1 }
                 ]
-            },
-            { 
-                id: 6, 
-                title: "Время", 
-                description: "Часы, дни, месяцы", 
-                icon: "fas fa-clock", 
-                level: 3, 
-                xp: 70, 
-                locked: true,
-                questions: []
-            },
-            { 
-                id: 7, 
-                title: "Город", 
-                description: "Городские объекты и транспорт", 
-                icon: "fas fa-building", 
-                level: 4, 
-                xp: 80, 
-                locked: true,
-                questions: []
-            },
-            { 
-                id: 8, 
-                title: "Работа", 
-                description: "Профессии и рабочие термины", 
-                icon: "fas fa-briefcase", 
-                level: 4, 
-                xp: 90, 
-                locked: true,
-                questions: []
             }
+        ];
+
+        // Данные для ежедневного вызова
+        const dailyQuestions = [
+            { question: "Как будет 'Привет' на казахском?", options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], correct: 0 },
+            { question: "Как будет 'Спасибо' на казахском?", options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], correct: 1 },
+            { question: "Как будет 'мама' на казахском?", options: ["Әке", "Ана", "Бауыр", "Әпке"], correct: 1 },
+            { question: "Как будет 'папа' на казахском?", options: ["Әке", "Ана", "Бауыр", "Әпке"], correct: 0 },
+            { question: "Как будет 'хлеб' на казахском?", options: ["Ет", "Сүт", "Нан", "Шай"], correct: 2 },
+            { question: "Как будет 'красный' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 0 },
+            { question: "Как будет 'синий' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 2 },
+            { question: "Как будет 'один' на казахском?", options: ["Бір", "Екі", "Үш", "Төрт"], correct: 0 },
+            { question: "Как будет 'пять' на казахском?", options: ["Төрт", "Бес", "Алты", "Жеті"], correct: 1 },
+            { question: "Выберите правильный перевод: 'Жақсы'", options: ["До свидания", "Пожалуйста", "Хорошо", "Извините"], correct: 2 }
         ];
 
         // Элементы DOM
         const skillsContainer = document.getElementById('skillsContainer');
         const lessonModal = document.getElementById('lessonModal');
+        const dailyModal = document.getElementById('dailyModal');
         const closeModal = document.getElementById('closeModal');
         const startLessonBtn = document.getElementById('startLessonBtn');
+        const startDailyBtn = document.getElementById('startDailyBtn');
+        const startDailyBtn2 = document.getElementById('startDailyBtn2');
+        const dailyStreakBtn = document.getElementById('dailyStreakBtn');
         const nextBtn = document.getElementById('nextBtn');
+        const dailyNextBtn = document.getElementById('dailyNextBtn');
         const userXPEl = document.getElementById('userXP');
         const progressFill = document.getElementById('progressFill');
         const userAvatarBtn = document.getElementById('userAvatarBtn');
@@ -1131,12 +1553,27 @@
         const menuItems = document.querySelectorAll('.menu-item');
         const contentSections = document.querySelectorAll('.content-section');
         const footerLinks = document.querySelectorAll('.footer-section a');
+        const calendarGrid = document.getElementById('calendarGrid');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const correctAnswersEl = document.getElementById('correctAnswers');
+        const totalQuestionsEl = document.getElementById('totalQuestions');
+        const dailyQuestionText = document.getElementById('dailyQuestionText');
+        const dailyOptions = document.querySelector('.daily-options');
 
         let currentQuestion = 1;
         let totalQuestions = 4;
         let userXP = parseInt(userXPEl.textContent);
         let selectedOption = null;
         let currentSkill = null;
+        let dailyStreak = 5;
+        let dailyCompleted = 12;
+        let dailyBest = 8;
+        let dailyXpEarned = 350;
+        let dailyCurrentQuestion = 0;
+        let dailyCorrectAnswers = 0;
+        let dailyTimer = 180; // 3 минуты в секундах
+        let timerInterval = null;
+        let dailyActive = false;
 
         // Функция для отрисовки навыков
         function renderSkills() {
@@ -1165,6 +1602,55 @@
             });
         }
 
+        // Функция для отрисовки календаря
+        function renderCalendar() {
+            calendarGrid.innerHTML = '';
+            
+            // Пустые дни в начале (если нужно)
+            for (let i = 0; i < 2; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day empty';
+                calendarGrid.appendChild(emptyDay);
+            }
+            
+            // Дни месяца (примерно 30 дней, начиная с текущего)
+            const today = new Date().getDate();
+            for (let i = 1; i <= 30; i++) {
+                const day = document.createElement('div');
+                day.className = 'calendar-day';
+                day.textContent = i;
+                
+                // Пример: отмечаем некоторые дни как пройденные
+                if (i < today && i % 2 === 0) {
+                    day.classList.add('completed');
+                } else if (i === today) {
+                    day.classList.add('current');
+                } else {
+                    day.classList.add('future');
+                }
+                
+                calendarGrid.appendChild(day);
+            }
+        }
+
+        // Функция обновления таймера ежедневного вызова
+        function updateDailyTimer() {
+            // Примерное время до сброса (24 часа)
+            const now = new Date();
+            const resetTime = new Date();
+            resetTime.setHours(24, 0, 0, 0); // Сброс в полночь
+            
+            const diff = resetTime - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            const timerString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('dailyTimer').textContent = `До сброса: ${timerString}`;
+            document.getElementById('dailyTimer2').textContent = `До сброса: ${timerString}`;
+        }
+
         // Функция начала урока
         function startLesson(skill) {
             currentSkill = skill;
@@ -1185,6 +1671,143 @@
             });
             
             showQuestion(currentQuestion);
+        }
+
+        // Функция начала ежедневного вызова
+        function startDailyChallenge() {
+            dailyModal.style.display = 'flex';
+            dailyCurrentQuestion = 0;
+            dailyCorrectAnswers = 0;
+            dailyTimer = 180; // 3 минуты
+            dailyActive = true;
+            
+            correctAnswersEl.textContent = dailyCorrectAnswers;
+            totalQuestionsEl.textContent = dailyQuestions.length;
+            timerDisplay.textContent = '03:00';
+            
+            // Сброс предыдущих ответов
+            document.querySelectorAll('.daily-option').forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+            });
+            
+            // Запуск таймера
+            if (timerInterval) clearInterval(timerInterval);
+            timerInterval = setInterval(updateDailyTimerDisplay, 1000);
+            
+            // Загрузка первого вопроса
+            loadDailyQuestion();
+            
+            dailyNextBtn.disabled = true;
+            dailyNextBtn.textContent = 'Следующий вопрос';
+        }
+
+        // Функция обновления таймера ежедневного вызова
+        function updateDailyTimerDisplay() {
+            if (!dailyActive) return;
+            
+            dailyTimer--;
+            
+            if (dailyTimer <= 0) {
+                dailyTimer = 0;
+                finishDailyChallenge();
+            }
+            
+            const minutes = Math.floor(dailyTimer / 60);
+            const seconds = dailyTimer % 60;
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Функция загрузки вопроса для ежедневного вызова
+        function loadDailyQuestion() {
+            if (dailyCurrentQuestion >= dailyQuestions.length) {
+                finishDailyChallenge();
+                return;
+            }
+            
+            const question = dailyQuestions[dailyCurrentQuestion];
+            dailyQuestionText.textContent = question.question;
+            
+            // Очищаем предыдущие варианты ответов
+            dailyOptions.innerHTML = '';
+            
+            // Добавляем новые варианты ответов
+            question.options.forEach((option, index) => {
+                const optionEl = document.createElement('div');
+                optionEl.className = 'daily-option';
+                optionEl.textContent = option;
+                optionEl.dataset.correct = index === question.correct;
+                optionEl.addEventListener('click', handleDailyOptionClick);
+                dailyOptions.appendChild(optionEl);
+            });
+            
+            dailyNextBtn.disabled = true;
+        }
+
+        // Обработчик клика по варианту ответа в ежедневном вызове
+        function handleDailyOptionClick(e) {
+            if (!dailyActive) return;
+            
+            const isCorrect = e.target.dataset.correct === 'true';
+            
+            if (isCorrect) {
+                e.target.classList.add('correct');
+                dailyCorrectAnswers++;
+                correctAnswersEl.textContent = dailyCorrectAnswers;
+                
+                // Начисляем XP за правильный ответ
+                userXP += 10;
+                userXPEl.textContent = userXP;
+                document.getElementById('totalXP').textContent = userXP;
+                dailyXpEarned += 10;
+                document.getElementById('dailyXpEarned').textContent = dailyXpEarned;
+                
+                // Обновляем лучший счет, если нужно
+                if (dailyCorrectAnswers > dailyBest) {
+                    dailyBest = dailyCorrectAnswers;
+                    document.getElementById('dailyBest').textContent = dailyBest;
+                }
+            } else {
+                e.target.classList.add('incorrect');
+                // Показать правильный ответ
+                e.target.parentElement.querySelectorAll('.daily-option').forEach(opt => {
+                    if (opt.dataset.correct === 'true') {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+            
+            // Блокируем все варианты ответов после выбора
+            document.querySelectorAll('.daily-option').forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+            
+            dailyNextBtn.disabled = false;
+            
+            // Если это последний вопрос, меняем текст кнопки
+            if (dailyCurrentQuestion === dailyQuestions.length - 1) {
+                dailyNextBtn.textContent = 'Завершить вызов';
+            }
+        }
+
+        // Функция завершения ежедневного вызова
+        function finishDailyChallenge() {
+            dailyActive = false;
+            clearInterval(timerInterval);
+            
+            // Увеличиваем счетчик пройденных вызовов
+            dailyCompleted++;
+            document.getElementById('dailyCompleted').textContent = dailyCompleted;
+            
+            // Увеличиваем серию дней
+            dailyStreak++;
+            document.getElementById('streakCount').textContent = dailyStreak;
+            document.getElementById('streakDays').textContent = dailyStreak;
+            document.getElementById('dailyStreakValue').textContent = dailyStreak;
+            
+            // Показываем результат
+            alert(`Ежедневный вызов завершен!\n\nПравильных ответов: ${dailyCorrectAnswers} из ${dailyQuestions.length}\nЗаработано XP: ${dailyCorrectAnswers * 10}\nВаша серия: ${dailyStreak} дней подряд!`);
+            
+            dailyModal.style.display = 'none';
         }
 
         // Функция загрузки вопросов для навыка
@@ -1312,14 +1935,27 @@
         // Инициализация
         document.addEventListener('DOMContentLoaded', () => {
             renderSkills();
+            renderCalendar();
+            updateDailyTimer();
             
-            // Обработчики событий для модального окна
+            // Обновляем таймер каждую секунду
+            setInterval(updateDailyTimer, 1000);
+            
+            // Обработчики событий для модального окна урока
             closeModal.addEventListener('click', () => {
                 lessonModal.style.display = 'none';
             });
             
+            // Обработчики для кнопок начала урока
             startLessonBtn.addEventListener('click', () => {
                 startLesson(skillsData[0]);
+            });
+            
+            // Обработчики для кнопок ежедневного вызова
+            startDailyBtn.addEventListener('click', startDailyChallenge);
+            startDailyBtn2.addEventListener('click', startDailyChallenge);
+            dailyStreakBtn.addEventListener('click', () => {
+                switchSection('daily');
             });
             
             // Обработчики для вариантов ответов (делегирование событий)
@@ -1329,7 +1965,7 @@
                 }
             });
             
-            // Обработчик кнопки "Далее"
+            // Обработчик кнопки "Далее" в уроке
             nextBtn.addEventListener('click', () => {
                 if (currentQuestion < totalQuestions) {
                     currentQuestion++;
@@ -1341,10 +1977,26 @@
                 }
             });
             
+            // Обработчик кнопки "Следующий вопрос" в ежедневном вызове
+            dailyNextBtn.addEventListener('click', () => {
+                dailyCurrentQuestion++;
+                
+                if (dailyCurrentQuestion < dailyQuestions.length) {
+                    loadDailyQuestion();
+                } else {
+                    finishDailyChallenge();
+                }
+            });
+            
             // Закрытие модального окна при клике вне его
             window.addEventListener('click', (e) => {
                 if (e.target === lessonModal) {
                     lessonModal.style.display = 'none';
+                }
+                if (e.target === dailyModal) {
+                    dailyModal.style.display = 'none';
+                    dailyActive = false;
+                    clearInterval(timerInterval);
                 }
             });
             
@@ -1398,11 +2050,11 @@
                     } else if (link.id === 'footerGrammarBtn' || linkText === 'Грамматика') {
                         alert('Раздел "Грамматика" находится в разработке. Скоро будет доступен!');
                     } else if (link.id === 'footerHelpBtn' || linkText === 'Помощь') {
-                        alert('Центр помощи скоро будет доступен. Если у вас есть вопросы, напишите нам на support@kazakhlearn.kz');
+                        alert('Центр помощи скоро будет доступен. Если у вас есть вопросы, напишите нам на kadyrkhan.mukhammedzhan@gmail.com');
                     } else if (link.id === 'footerFaqBtn' || linkText === 'FAQ') {
                         alert('Часто задаваемые вопросы будут добавлены в ближайшее время.');
                     } else if (link.id === 'footerContactBtn' || linkText === 'Связаться с нами') {
-                        alert('Вы можете связаться с нами по email: contact@kazakhlearn.kz');
+                        alert('Вы можете связаться с нами по email: kadyrkhan.mukhammedzhan@gmail.com');
                     } else if (link.id === 'footerAboutBtn' || linkText === 'О проекте') {
                         alert('KazakhLearn - это бесплатная платформа для изучения казахского языка в игровой форме. Проект создан для помощи всем, кто хочет выучить казахский язык.');
                     }
