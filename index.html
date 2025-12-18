@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #58cc02;
-            --primary-dark: #3ea600;
-            --secondary-color: #1cb0f6;
-            --light-bg: #f9f9f9;
+            --primary-color: #1cb0f6;
+            --primary-dark: #0a9bd6;
+            --secondary-color: #58cc02;
+            --light-bg: #f0f9ff;
             --card-bg: #ffffff;
             --text-color: #333;
             --text-light: #666;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow: 0 4px 12px rgba(28, 176, 246, 0.15);
             --border-radius: 16px;
         }
 
@@ -78,7 +78,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color), #0a9bd6);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,6 +86,7 @@
             font-weight: bold;
             cursor: pointer;
             transition: transform 0.2s;
+            box-shadow: 0 3px 8px rgba(28, 176, 246, 0.3);
         }
 
         .user-avatar:hover {
@@ -102,6 +103,7 @@
             width: 200px;
             display: none;
             z-index: 1000;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .user-menu.active {
@@ -116,21 +118,23 @@
         }
 
         .user-menu-item:hover {
-            background-color: #f5f5f5;
+            background-color: #f0f9ff;
         }
 
         .user-menu-item i {
             margin-right: 10px;
             width: 20px;
             text-align: center;
+            color: var(--primary-color);
         }
 
         .xp-display {
-            background-color: #f0f0f0;
+            background-color: #e6f7ff;
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 600;
             color: var(--text-color);
+            border: 1px solid rgba(28, 176, 246, 0.2);
         }
 
         .xp-display i {
@@ -150,6 +154,7 @@
             color: #333;
             cursor: pointer;
             transition: transform 0.2s;
+            box-shadow: 0 3px 8px rgba(255, 204, 0, 0.3);
         }
 
         .daily-streak:hover {
@@ -180,6 +185,7 @@
             padding: 20px;
             box-shadow: var(--shadow);
             margin-bottom: 20px;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .menu-item {
@@ -195,12 +201,13 @@
 
         .menu-item:hover, .menu-item.active {
             background-color: #f0f9ff;
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         .menu-item i {
             width: 20px;
             text-align: center;
+            color: var(--primary-color);
         }
 
         .progress-card {
@@ -208,6 +215,7 @@
             border-radius: var(--border-radius);
             padding: 20px;
             box-shadow: var(--shadow);
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .progress-title {
@@ -218,7 +226,7 @@
 
         .progress-bar {
             height: 10px;
-            background-color: #e0e0e0;
+            background-color: #e0f5ff;
             border-radius: 5px;
             margin-bottom: 10px;
             overflow: hidden;
@@ -230,6 +238,7 @@
             width: 65%;
             border-radius: 5px;
             transition: width 0.5s ease;
+            box-shadow: 0 2px 5px rgba(28, 176, 246, 0.4);
         }
 
         .progress-text {
@@ -251,6 +260,8 @@
             margin-bottom: 30px;
             box-shadow: var(--shadow);
             text-align: center;
+            border: 1px solid rgba(28, 176, 246, 0.1);
+            background: linear-gradient(135deg, #ffffff, #f8fdff);
         }
 
         .welcome-title {
@@ -265,7 +276,7 @@
         }
 
         .start-lesson-btn {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border: none;
             padding: 15px 30px;
@@ -273,14 +284,16 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            box-shadow: 0 4px 15px rgba(28, 176, 246, 0.4);
         }
 
         .start-lesson-btn:hover {
-            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(28, 176, 246, 0.5);
         }
 
         /* Daily Challenge Card */
@@ -289,7 +302,7 @@
             border-radius: var(--border-radius);
             padding: 25px;
             margin-bottom: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
             color: white;
             display: flex;
             justify-content: space-between;
@@ -341,6 +354,7 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             z-index: 1;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .start-daily-btn:hover {
@@ -356,7 +370,7 @@
         .section-title {
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--text-color);
+            color: var(--primary-color);
         }
 
         .skills-container {
@@ -371,13 +385,15 @@
             padding: 20px;
             box-shadow: var(--shadow);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             cursor: pointer;
             position: relative;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(28, 176, 246, 0.2);
         }
 
         .skill-card.locked {
@@ -389,18 +405,20 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background-color: #e8f5e9;
+            background-color: #e6f7ff;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
             color: var(--primary-color);
             font-size: 1.5rem;
+            border: 2px solid rgba(28, 176, 246, 0.2);
         }
 
         .skill-title {
             font-weight: 600;
             margin-bottom: 5px;
+            color: var(--text-color);
         }
 
         .skill-desc {
@@ -411,10 +429,12 @@
 
         .skill-level {
             display: inline-block;
-            background-color: #e0e0e0;
+            background-color: #e6f7ff;
             padding: 3px 10px;
             border-radius: 20px;
             font-size: 0.8rem;
+            color: var(--primary-color);
+            border: 1px solid rgba(28, 176, 246, 0.2);
         }
 
         .lock-icon {
@@ -432,6 +452,8 @@
             padding: 30px;
             box-shadow: var(--shadow);
             margin-bottom: 30px;
+            border: 1px solid rgba(28, 176, 246, 0.1);
+            background: linear-gradient(135deg, #ffffff, #f8fdff);
         }
 
         .content-section.active {
@@ -471,10 +493,11 @@
         }
 
         .daily-stat {
-            background-color: #f8f9fa;
+            background-color: #f0f9ff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .daily-stat-value {
@@ -490,9 +513,10 @@
         }
 
         .daily-calendar {
-            background-color: #f8f9fa;
+            background-color: #f0f9ff;
             border-radius: 10px;
             padding: 20px;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .calendar-title {
@@ -515,6 +539,7 @@
             border-radius: 8px;
             font-weight: 600;
             font-size: 0.9rem;
+            transition: all 0.2s;
         }
 
         .calendar-day.empty {
@@ -524,15 +549,17 @@
         .calendar-day.completed {
             background-color: var(--primary-color);
             color: white;
+            box-shadow: 0 2px 5px rgba(28, 176, 246, 0.4);
         }
 
         .calendar-day.current {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-dark);
             color: white;
+            box-shadow: 0 2px 5px rgba(28, 176, 246, 0.6);
         }
 
         .calendar-day.future {
-            background-color: #e9ecef;
+            background-color: #e0f5ff;
             color: #999;
         }
 
@@ -558,6 +585,7 @@
             overflow: hidden;
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .daily-modal-header {
@@ -590,6 +618,7 @@
             font-weight: bold;
             color: var(--primary-color);
             margin: 15px 0;
+            text-shadow: 0 2px 5px rgba(28, 176, 246, 0.3);
         }
 
         .daily-question {
@@ -599,6 +628,7 @@
         .daily-question-text {
             font-size: 1.3rem;
             margin-bottom: 20px;
+            color: var(--text-color);
         }
 
         .daily-options {
@@ -609,22 +639,24 @@
 
         .daily-option {
             padding: 15px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #e0f5ff;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
             text-align: center;
             font-weight: 500;
+            background-color: #f8fdff;
         }
 
         .daily-option:hover {
-            border-color: var(--secondary-color);
-            background-color: #f0f9ff;
+            border-color: var(--primary-color);
+            background-color: #e6f7ff;
         }
 
         .daily-option.correct {
             border-color: var(--primary-color);
-            background-color: #e8f5e9;
+            background-color: #e6f7ff;
+            color: var(--primary-color);
         }
 
         .daily-option.incorrect {
@@ -650,23 +682,27 @@
         }
 
         .daily-next-btn {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border: none;
             padding: 12px 25px;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(28, 176, 246, 0.4);
         }
 
         .daily-next-btn:hover {
-            background-color: #0a9bd6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(28, 176, 246, 0.5);
         }
 
         .daily-next-btn:disabled {
-            background-color: #ccc;
+            background: #ccc;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
         /* Stats Grid */
@@ -678,10 +714,11 @@
         }
 
         .stat-card {
-            background-color: #f8f9fa;
+            background-color: #f0f9ff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .stat-value {
@@ -704,10 +741,11 @@
         }
 
         .achievement-card {
-            background-color: #f8f9fa;
+            background-color: #f0f9ff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .achievement-icon {
@@ -724,21 +762,23 @@
         }
 
         .shop-item {
-            background-color: #f8f9fa;
+            background-color: #f0f9ff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             position: relative;
+            border: 1px solid rgba(28, 176, 246, 0.1);
         }
 
         .shop-item-price {
             display: inline-block;
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             padding: 5px 10px;
             border-radius: 20px;
             margin-top: 10px;
             font-weight: bold;
+            box-shadow: 0 3px 8px rgba(28, 176, 246, 0.3);
         }
 
         /* Lesson Modal */
@@ -763,10 +803,11 @@
             overflow: hidden;
             max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .modal-header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             padding: 20px;
             display: flex;
@@ -784,6 +825,11 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
         }
 
         .modal-body {
@@ -797,6 +843,7 @@
         .question-text {
             font-size: 1.3rem;
             margin-bottom: 20px;
+            color: var(--text-color);
         }
 
         .options {
@@ -807,22 +854,24 @@
 
         .option {
             padding: 15px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #e0f5ff;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
             text-align: center;
             font-weight: 500;
+            background-color: #f8fdff;
         }
 
         .option:hover {
-            border-color: var(--secondary-color);
-            background-color: #f0f9ff;
+            border-color: var(--primary-color);
+            background-color: #e6f7ff;
         }
 
         .option.correct {
             border-color: var(--primary-color);
-            background-color: #e8f5e9;
+            background-color: #e6f7ff;
+            color: var(--primary-color);
         }
 
         .option.incorrect {
@@ -848,28 +897,32 @@
         }
 
         .next-btn {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             color: white;
             border: none;
             padding: 12px 25px;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(28, 176, 246, 0.4);
         }
 
         .next-btn:hover {
-            background-color: #0a9bd6;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(28, 176, 246, 0.5);
         }
 
         .next-btn:disabled {
-            background-color: #ccc;
+            background: #ccc;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: white;
             padding: 30px 0;
             margin-top: 50px;
@@ -904,15 +957,79 @@
 
         .footer-section ul li a:hover {
             color: white;
+            text-decoration: underline;
         }
 
         .copyright {
             text-align: center;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #444;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
             font-size: 0.9rem;
+        }
+
+        /* Lesson Progress Indicator */
+        .lesson-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #f0f9ff;
+            border-radius: 10px;
+            border: 1px solid rgba(28, 176, 246, 0.2);
+        }
+
+        .progress-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #e0f5ff;
+            transition: background-color 0.3s;
+        }
+
+        .progress-dot.active {
+            background-color: var(--primary-color);
+        }
+
+        .progress-dot.completed {
+            background-color: var(--primary-color);
+        }
+
+        .question-counter {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Difficulty Indicator */
+        .difficulty-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .difficulty-easy {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .difficulty-medium {
+            background-color: #fff3e0;
+            color: #f57c00;
+        }
+
+        .difficulty-hard {
+            background-color: #ffebee;
+            color: #c62828;
         }
 
         /* Responsive */
@@ -1120,7 +1237,7 @@
                         
                         <div class="daily-calendar">
                             <h3 class="calendar-title">Ваша серия</h3>
-                            <p style="margin-bottom: 15px; color: var(--text-light);">Каждый день отмечается зеленым, если вы прошли вызов</p>
+                            <p style="margin-bottom: 15px; color: var(--text-light);">Каждый день отмечается голубым, если вы прошли вызов</p>
                             <div class="calendar-grid" id="calendarGrid">
                                 <!-- Календарь будет заполнен через JavaScript -->
                             </div>
@@ -1140,7 +1257,7 @@
                             </div>
                             <h3 class="skill-title">Основы</h3>
                             <p class="skill-desc">Приветствия и основы общения</p>
-                            <div class="skill-level">5 уроков</div>
+                            <div class="skill-level">7 уроков</div>
                         </div>
                         
                         <div class="skill-card" data-lesson="family">
@@ -1149,7 +1266,7 @@
                             </div>
                             <h3 class="skill-title">Семья</h3>
                             <p class="skill-desc">Члены семьи и родственники</p>
-                            <div class="skill-level">6 уроков</div>
+                            <div class="skill-level">8 уроков</div>
                         </div>
                         
                         <div class="skill-card" data-lesson="food">
@@ -1158,7 +1275,7 @@
                             </div>
                             <h3 class="skill-title">Еда</h3>
                             <p class="skill-desc">Названия продуктов и блюд</p>
-                            <div class="skill-level">7 уроков</div>
+                            <div class="skill-level">9 уроков</div>
                         </div>
                         
                         <div class="skill-card" data-lesson="numbers">
@@ -1167,7 +1284,7 @@
                             </div>
                             <h3 class="skill-title">Числа</h3>
                             <p class="skill-desc">Цифры и счет</p>
-                            <div class="skill-level">4 урока</div>
+                            <div class="skill-level">6 уроков</div>
                         </div>
                     </div>
                 </div>
@@ -1327,7 +1444,7 @@
                 <div class="daily-challenge-timer">
                     <p>Оставшееся время:</p>
                     <div class="timer-display" id="timerDisplay">03:00</div>
-                    <p>Правильных ответов: <span id="correctAnswers">0</span> из <span id="totalQuestions">10</span></p>
+                    <p>Правильных ответов: <span id="correctAnswers">0</span> из <span id="totalQuestions">15</span></p>
                 </div>
 
                 <div class="daily-question" id="dailyQuestion1">
@@ -1359,8 +1476,16 @@
                 <button class="close-modal" id="closeModal">&times;</button>
             </div>
             <div class="modal-body">
+                <div class="lesson-progress">
+                    <div class="progress-dots" id="progressDots"></div>
+                    <div class="question-counter">Вопрос <span id="currentQuestionNum">1</span> из <span id="totalQuestionsCount">8</span></div>
+                </div>
+                
                 <div class="question" id="question1">
-                    <div class="question-text">Как будет "Привет" на казахском?</div>
+                    <div class="question-text">
+                        Как будет "Привет" на казахском?
+                        <span class="difficulty-badge difficulty-easy">Легко</span>
+                    </div>
                     <div class="options">
                         <div class="option" data-correct="true">Сәлем</div>
                         <div class="option" data-correct="false">Рахмет</div>
@@ -1369,40 +1494,10 @@
                     </div>
                 </div>
 
-                <div class="question" id="question2" style="display: none;">
-                    <div class="question-text">Как будет "Спасибо" на казахском?</div>
-                    <div class="options">
-                        <div class="option" data-correct="false">Сәлем</div>
-                        <div class="option" data-correct="true">Рахмет</div>
-                        <div class="option" data-correct="false">Кешіріңіз</div>
-                        <div class="option" data-correct="false">Жақсы</div>
-                    </div>
-                </div>
-
-                <div class="question" id="question3" style="display: none;">
-                    <div class="question-text">Выберите правильный перевод: "Жақсы"</div>
-                    <div class="options">
-                        <div class="option" data-correct="false">До свидания</div>
-                        <div class="option" data-correct="false">Пожалуйста</div>
-                        <div class="option" data-correct="true">Хорошо</div>
-                        <div class="option" data-correct="false">Извините</div>
-                    </div>
-                </div>
-
-                <div class="question" id="question4" style="display: none;">
-                    <div class="question-text">Как сказать "До свидания" на казахском?</div>
-                    <div class="options">
-                        <div class="option" data-correct="false">Рахмет</div>
-                        <div class="option" data-correct="false">Сәлем</div>
-                        <div class="option" data-correct="true">Сау болыңыз</div>
-                        <div class="option" data-correct="false">Жақсы</div>
-                    </div>
-                </div>
-
                 <div class="lesson-footer">
                     <div class="xp-reward">
                         <i class="fas fa-star"></i>
-                        <span>+10 XP за урок</span>
+                        <span>+15 XP за урок</span>
                     </div>
                     <button class="next-btn" id="nextBtn" disabled>Далее</button>
                 </div>
@@ -1446,7 +1541,7 @@
     </footer>
 
     <script>
-        // Данные навыков (уроков) с разными словами для каждого навыка
+        // Данные навыков с более сложными и длинными уроками
         const skillsData = [
             { 
                 id: 1, 
@@ -1454,12 +1549,57 @@
                 description: "Приветствия и основы", 
                 icon: "fas fa-handshake", 
                 level: 1, 
-                xp: 30, 
+                xp: 50, 
                 locked: false,
                 questions: [
-                    { question: "Как будет 'Привет' на казахском?", options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], correct: 0 },
-                    { question: "Как будет 'Спасибо' на казахском?", options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], correct: 1 },
-                    { question: "Выберите правильный перевод: 'Жақсы'", options: ["До свидания", "Пожалуйста", "Хорошо", "Извините"], correct: 2 }
+                    { 
+                        question: "Как будет 'Привет' на казахском?", 
+                        options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], 
+                        correct: 0,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'Спасибо' на казахском?", 
+                        options: ["Сәлем", "Рахмет", "Кешіріңіз", "Жақсы"], 
+                        correct: 1,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Выберите правильный перевод: 'Жақсы'", 
+                        options: ["До свидания", "Пожалуйста", "Хорошо", "Извините"], 
+                        correct: 2,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как сказать 'До свидания' на казахском?", 
+                        options: ["Рахмет", "Сәлем", "Сау болыңыз", "Жақсы"], 
+                        correct: 2,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'Извините' на казахском?", 
+                        options: ["Рахмет", "Сәлем", "Сау болыңыз", "Кешіріңіз"], 
+                        correct: 3,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Выберите правильный перевод: 'Кешіріңіз'", 
+                        options: ["Спасибо", "Привет", "Извините", "До свидания"], 
+                        correct: 2,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'Пожалуйста' (в ответ на спасибо) на казахском?", 
+                        options: ["Оқасы жоқ", "Рахмет", "Сәлем", "Жақсы"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как сказать 'Как дела?' на казахском?", 
+                        options: ["Қалайсыз?", "Сәлеметсіз бе?", "Рахмет", "Жақсы"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    }
                 ]
             },
             { 
@@ -1468,12 +1608,63 @@
                 description: "Члены семьи и родственники", 
                 icon: "fas fa-users", 
                 level: 1, 
-                xp: 40, 
+                xp: 60, 
                 locked: false,
                 questions: [
-                    { question: "Как будет 'мама' на казахском?", options: ["Әке", "Ана", "Бауыр", "Әпке"], correct: 1 },
-                    { question: "Как будет 'папа' на казахском?", options: ["Әке", "Ана", "Бауыр", "Әпке"], correct: 0 },
-                    { question: "Как будет 'брат' на казахском?", options: ["Әпке", "Аға", "Сіңлі", "Бауыр"], correct: 3 }
+                    { 
+                        question: "Как будет 'мама' на казахском?", 
+                        options: ["Әке", "Ана", "Бауыр", "Әпке"], 
+                        correct: 1,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'папа' на казахском?", 
+                        options: ["Әке", "Ана", "Бауыр", "Әпке"], 
+                        correct: 0,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'брат' на казахском?", 
+                        options: ["Әпке", "Аға", "Сіңлі", "Бауыр"], 
+                        correct: 3,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'сестра' на казахском?", 
+                        options: ["Әпке", "Аға", "Сіңлі", "Бауыр"], 
+                        correct: 2,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'дедушка' на казахском?", 
+                        options: ["Әже", "Ата", "Нағашы", "Жеңге"], 
+                        correct: 1,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'бабушка' на казахском?", 
+                        options: ["Әже", "Ата", "Нағашы", "Жеңге"], 
+                        correct: 0,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'дядя' (со стороны отца) на казахском?", 
+                        options: ["Тәте", "Аға", "Нағашы аға", "Әпке"], 
+                        correct: 2,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'тетя' (со стороны матери) на казахском?", 
+                        options: ["Тәте", "Нағашы әпке", "Жеңге", "Сіңлі"], 
+                        correct: 1,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'внук' на казахском?", 
+                        options: ["Немере", "Жиен", "Ұл", "Қыз"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    }
                 ]
             },
             { 
@@ -1482,12 +1673,69 @@
                 description: "Названия продуктов и блюд", 
                 icon: "fas fa-utensils", 
                 level: 2, 
-                xp: 50, 
+                xp: 70, 
                 locked: false,
                 questions: [
-                    { question: "Как будет 'хлеб' на казахском?", options: ["Ет", "Сүт", "Нан", "Шай"], correct: 2 },
-                    { question: "Как будет 'мясо' на казахском?", options: ["Ет", "Сүт", "Нан", "Шай"], correct: 0 },
-                    { question: "Как будет 'чай' на казахском?", options: ["Ет", "Сүт", "Нан", "Шай"], correct: 3 }
+                    { 
+                        question: "Как будет 'хлеб' на казахском?", 
+                        options: ["Ет", "Сүт", "Нан", "Шай"], 
+                        correct: 2,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'мясо' на казахском?", 
+                        options: ["Ет", "Сүт", "Нан", "Шай"], 
+                        correct: 0,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'чай' на казахском?", 
+                        options: ["Ет", "Сүт", "Нан", "Шай"], 
+                        correct: 3,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'молоко' на казахском?", 
+                        options: ["Ет", "Сүт", "Нан", "Шай"], 
+                        correct: 1,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'вода' на казахском?", 
+                        options: ["Су", "Сүт", "Шай", "Кофе"], 
+                        correct: 0,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'фрукты' на казахском?", 
+                        options: ["Көкөніс", "Жеміс", "Ет", "Нан"], 
+                        correct: 1,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'овощи' на казахском?", 
+                        options: ["Көкөніс", "Жеміс", "Ет", "Нан"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'бешбармак' (традиционное блюдо) на казахском?", 
+                        options: ["Бәлеш", "Бешбармақ", "Манты", "Плов"], 
+                        correct: 1,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'кумыс' (национальный напиток) на казахском?", 
+                        options: ["Қымыз", "Айран", "Шұбат", "Кефир"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'плов' на казахском?", 
+                        options: ["Плов", "Пало", "Палау", "Пілау"], 
+                        correct: 3,
+                        difficulty: "hard"
+                    }
                 ]
             },
             { 
@@ -1496,12 +1744,63 @@
                 description: "Цвета и оттенки", 
                 icon: "fas fa-palette", 
                 level: 2, 
-                xp: 30, 
+                xp: 60, 
                 locked: false,
                 questions: [
-                    { question: "Как будет 'красный' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 0 },
-                    { question: "Как будет 'синий' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 2 },
-                    { question: "Как будет 'зеленый' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 1 }
+                    { 
+                        question: "Как будет 'красный' на казахском?", 
+                        options: ["Қызыл", "Жасыл", "Көк", "Сары"], 
+                        correct: 0,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'синий' на казахском?", 
+                        options: ["Қызыл", "Жасыл", "Көк", "Сары"], 
+                        correct: 2,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'зеленый' на казахском?", 
+                        options: ["Қызыл", "Жасыл", "Көк", "Сары"], 
+                        correct: 1,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'желтый' на казахском?", 
+                        options: ["Қызыл", "Жасыл", "Көк", "Сары"], 
+                        correct: 3,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'белый' на казахском?", 
+                        options: ["Қара", "Ақ", "Қоңыр", "Сұр"], 
+                        correct: 1,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'черный' на казахском?", 
+                        options: ["Қара", "Ақ", "Қоңыр", "Сұр"], 
+                        correct: 0,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'коричневый' на казахском?", 
+                        options: ["Қара", "Ақ", "Қоңыр", "Сұр"], 
+                        correct: 2,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'серый' на казахском?", 
+                        options: ["Қара", "Ақ", "Қоңыр", "Сұр"], 
+                        correct: 3,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'оранжевый' на казахском?", 
+                        options: ["Қызғылт", "Сары", "Қызғылт сары", "Сары-қызыл"], 
+                        correct: 2,
+                        difficulty: "hard"
+                    }
                 ]
             },
             { 
@@ -1510,12 +1809,69 @@
                 description: "Цифры и счёт", 
                 icon: "fas fa-sort-numeric-up", 
                 level: 3, 
-                xp: 60, 
+                xp: 80, 
                 locked: false,
                 questions: [
-                    { question: "Как будет 'один' на казахском?", options: ["Бір", "Екі", "Үш", "Төрт"], correct: 0 },
-                    { question: "Как будет 'три' на казахском?", options: ["Бір", "Екі", "Үш", "Төрт"], correct: 2 },
-                    { question: "Как будет 'пять' на казахском?", options: ["Төрт", "Бес", "Алты", "Жеті"], correct: 1 }
+                    { 
+                        question: "Как будет 'один' на казахском?", 
+                        options: ["Бір", "Екі", "Үш", "Төрт"], 
+                        correct: 0,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'три' на казахском?", 
+                        options: ["Бір", "Екі", "Үш", "Төрт"], 
+                        correct: 2,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'пять' на казахском?", 
+                        options: ["Төрт", "Бес", "Алты", "Жеті"], 
+                        correct: 1,
+                        difficulty: "easy"
+                    },
+                    { 
+                        question: "Как будет 'семь' на казахском?", 
+                        options: ["Төрт", "Бес", "Алты", "Жеті"], 
+                        correct: 3,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'десять' на казахском?", 
+                        options: ["Сегіз", "Тоғыз", "Он", "Жиырма"], 
+                        correct: 2,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'двадцать' на казахском?", 
+                        options: ["Сегіз", "Тоғыз", "Он", "Жиырма"], 
+                        correct: 3,
+                        difficulty: "medium"
+                    },
+                    { 
+                        question: "Как будет 'сто' на казахском?", 
+                        options: ["Жүз", "Мың", "Он мың", "Жүз мың"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'тысяча' на казахском?", 
+                        options: ["Жүз", "Мың", "Он мың", "Жүз мың"], 
+                        correct: 1,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'миллион' на казахском?", 
+                        options: ["Миллион", "Миллиард", "Мың", "Жүз мың"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    },
+                    { 
+                        question: "Как будет 'ноль' на казахском?", 
+                        options: ["Нөл", "Бір", "Бос", "Жоқ"], 
+                        correct: 0,
+                        difficulty: "hard"
+                    }
                 ]
             }
         ];
@@ -1531,7 +1887,12 @@
             { question: "Как будет 'синий' на казахском?", options: ["Қызыл", "Жасыл", "Көк", "Сары"], correct: 2 },
             { question: "Как будет 'один' на казахском?", options: ["Бір", "Екі", "Үш", "Төрт"], correct: 0 },
             { question: "Как будет 'пять' на казахском?", options: ["Төрт", "Бес", "Алты", "Жеті"], correct: 1 },
-            { question: "Выберите правильный перевод: 'Жақсы'", options: ["До свидания", "Пожалуйста", "Хорошо", "Извините"], correct: 2 }
+            { question: "Выберите правильный перевод: 'Жақсы'", options: ["До свидания", "Пожалуйста", "Хорошо", "Извините"], correct: 2 },
+            { question: "Как будет 'вода' на казахском?", options: ["Су", "Сүт", "Шай", "Кофе"], correct: 0 },
+            { question: "Как будет 'десять' на казахском?", options: ["Сегіз", "Тоғыз", "Он", "Жиырма"], correct: 2 },
+            { question: "Как будет 'белый' на казахском?", options: ["Қара", "Ақ", "Қоңыр", "Сұр"], correct: 1 },
+            { question: "Как будет 'сестра' на казахском?", options: ["Әпке", "Аға", "Сіңлі", "Бауыр"], correct: 2 },
+            { question: "Как будет 'кумыс' на казахском?", options: ["Қымыз", "Айран", "Шұбат", "Кефир"], correct: 0 }
         ];
 
         // Элементы DOM
@@ -1559,9 +1920,11 @@
         const totalQuestionsEl = document.getElementById('totalQuestions');
         const dailyQuestionText = document.getElementById('dailyQuestionText');
         const dailyOptions = document.querySelector('.daily-options');
+        const progressDots = document.getElementById('progressDots');
+        const currentQuestionNum = document.getElementById('currentQuestionNum');
+        const totalQuestionsCount = document.getElementById('totalQuestionsCount');
 
-        let currentQuestion = 1;
-        let totalQuestions = 4;
+        let currentQuestionIndex = 0;
         let userXP = parseInt(userXPEl.textContent);
         let selectedOption = null;
         let currentSkill = null;
@@ -1588,7 +1951,7 @@
                     </div>
                     <h3 class="skill-title">${skill.title}</h3>
                     <p class="skill-desc">${skill.description}</p>
-                    <div class="skill-level">Уровень ${skill.level}</div>
+                    <div class="skill-level">${skill.questions.length} уроков</div>
                     ${skill.locked ? '<i class="fas fa-lock lock-icon"></i>' : ''}
                 `;
                 
@@ -1654,9 +2017,9 @@
         // Функция начала урока
         function startLesson(skill) {
             currentSkill = skill;
+            currentQuestionIndex = 0;
+            
             document.getElementById('lessonTitle').textContent = `Урок: ${skill.title}`;
-            currentQuestion = 1;
-            totalQuestions = skill.questions ? skill.questions.length : 3;
             
             // Загружаем вопросы для выбранного навыка
             loadQuestionsForSkill(skill);
@@ -1670,7 +2033,138 @@
                 option.classList.remove('correct', 'incorrect');
             });
             
-            showQuestion(currentQuestion);
+            showQuestion(currentQuestionIndex);
+        }
+
+        // Функция для создания индикатора прогресса
+        function createProgressDots(totalQuestions) {
+            progressDots.innerHTML = '';
+            for (let i = 0; i < totalQuestions; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot';
+                if (i === 0) dot.classList.add('active');
+                progressDots.appendChild(dot);
+            }
+        }
+
+        // Функция обновления индикатора прогресса
+        function updateProgressDots(currentIndex) {
+            const dots = progressDots.querySelectorAll('.progress-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active', 'completed');
+                if (index < currentIndex) {
+                    dot.classList.add('completed');
+                } else if (index === currentIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+
+        // Функция загрузки вопросов для навыка
+        function loadQuestionsForSkill(skill) {
+            const modalBody = document.querySelector('.modal-body');
+            
+            // Удаляем старые вопросы
+            document.querySelectorAll('.question').forEach(q => q.remove());
+            
+            // Создаем индикатор прогресса
+            createProgressDots(skill.questions.length);
+            totalQuestionsCount.textContent = skill.questions.length;
+            
+            // Создаем новые вопросы
+            if (skill.questions && skill.questions.length > 0) {
+                skill.questions.forEach((q, index) => {
+                    const questionNum = index + 1;
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question';
+                    questionDiv.id = `question${questionNum}`;
+                    questionDiv.style.display = questionNum === 1 ? 'block' : 'none';
+                    
+                    // Определяем класс сложности
+                    let difficultyClass = 'difficulty-easy';
+                    let difficultyText = 'Легко';
+                    
+                    if (q.difficulty === 'medium') {
+                        difficultyClass = 'difficulty-medium';
+                        difficultyText = 'Средне';
+                    } else if (q.difficulty === 'hard') {
+                        difficultyClass = 'difficulty-hard';
+                        difficultyText = 'Сложно';
+                    }
+                    
+                    let optionsHtml = '';
+                    q.options.forEach((option, optIndex) => {
+                        const isCorrect = optIndex === q.correct;
+                        optionsHtml += `<div class="option" data-correct="${isCorrect}">${option}</div>`;
+                    });
+                    
+                    questionDiv.innerHTML = `
+                        <div class="question-text">
+                            ${q.question}
+                            <span class="difficulty-badge ${difficultyClass}">${difficultyText}</span>
+                        </div>
+                        <div class="options">${optionsHtml}</div>
+                    `;
+                    
+                    // Вставляем перед футером урока
+                    const lessonFooter = document.querySelector('.lesson-footer');
+                    modalBody.insertBefore(questionDiv, lessonFooter);
+                });
+                
+                // Обновляем обработчики для новых опций
+                document.querySelectorAll('.option').forEach(option => {
+                    option.addEventListener('click', handleOptionClick);
+                });
+            }
+        }
+
+        // Функция показа вопроса
+        function showQuestion(questionIndex) {
+            // Скрыть все вопросы
+            document.querySelectorAll('.question').forEach(q => {
+                q.style.display = 'none';
+            });
+            
+            // Показать текущий вопрос
+            const currentQuestionEl = document.getElementById(`question${questionIndex + 1}`);
+            if (currentQuestionEl) {
+                currentQuestionEl.style.display = 'block';
+            }
+            
+            // Обновить счетчик вопросов
+            currentQuestionNum.textContent = questionIndex + 1;
+            
+            // Обновить индикатор прогресса
+            updateProgressDots(questionIndex);
+            
+            // Изменить текст кнопки на последнем вопросе
+            if (questionIndex === currentSkill.questions.length - 1) {
+                nextBtn.textContent = 'Завершить урок';
+            } else {
+                nextBtn.textContent = 'Далее';
+            }
+        }
+
+        // Обработчик клика по варианту ответа
+        function handleOptionClick(e) {
+            if (selectedOption) return; // Уже выбран ответ
+            
+            selectedOption = e.target;
+            const isCorrect = e.target.dataset.correct === 'true';
+            
+            if (isCorrect) {
+                e.target.classList.add('correct');
+            } else {
+                e.target.classList.add('incorrect');
+                // Показать правильный ответ
+                e.target.parentElement.querySelectorAll('.option').forEach(opt => {
+                    if (opt.dataset.correct === 'true') {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+            
+            nextBtn.disabled = false;
         }
 
         // Функция начала ежедневного вызова
@@ -1810,90 +2304,11 @@
             dailyModal.style.display = 'none';
         }
 
-        // Функция загрузки вопросов для навыка
-        function loadQuestionsForSkill(skill) {
-            const modalBody = document.querySelector('.modal-body');
-            
-            // Удаляем старые вопросы
-            document.querySelectorAll('.question').forEach(q => q.remove());
-            
-            // Создаем новые вопросы
-            if (skill.questions && skill.questions.length > 0) {
-                skill.questions.forEach((q, index) => {
-                    const questionNum = index + 1;
-                    const questionDiv = document.createElement('div');
-                    questionDiv.className = 'question';
-                    questionDiv.id = `question${questionNum}`;
-                    questionDiv.style.display = questionNum === 1 ? 'block' : 'none';
-                    
-                    let optionsHtml = '';
-                    q.options.forEach((option, optIndex) => {
-                        const isCorrect = optIndex === q.correct;
-                        optionsHtml += `<div class="option" data-correct="${isCorrect}">${option}</div>`;
-                    });
-                    
-                    questionDiv.innerHTML = `
-                        <div class="question-text">${q.question}</div>
-                        <div class="options">${optionsHtml}</div>
-                    `;
-                    
-                    modalBody.insertBefore(questionDiv, document.querySelector('.lesson-footer'));
-                });
-                
-                // Обновляем обработчики для новых опций
-                document.querySelectorAll('.option').forEach(option => {
-                    option.addEventListener('click', handleOptionClick);
-                });
-            }
-        }
-
-        // Функция показа вопроса
-        function showQuestion(questionNum) {
-            // Скрыть все вопросы
-            document.querySelectorAll('.question').forEach(q => {
-                q.style.display = 'none';
-            });
-            
-            // Показать текущий вопрос
-            const currentQuestionEl = document.getElementById(`question${questionNum}`);
-            if (currentQuestionEl) {
-                currentQuestionEl.style.display = 'block';
-            }
-            
-            // Изменить текст кнопки на последнем вопросе
-            if (questionNum === totalQuestions) {
-                nextBtn.textContent = 'Завершить';
-            } else {
-                nextBtn.textContent = 'Далее';
-            }
-        }
-
-        // Обработчик клика по варианту ответа
-        function handleOptionClick(e) {
-            if (selectedOption) return; // Уже выбран ответ
-            
-            selectedOption = e.target;
-            const isCorrect = e.target.dataset.correct === 'true';
-            
-            if (isCorrect) {
-                e.target.classList.add('correct');
-            } else {
-                e.target.classList.add('incorrect');
-                // Показать правильный ответ
-                e.target.parentElement.querySelectorAll('.option').forEach(opt => {
-                    if (opt.dataset.correct === 'true') {
-                        opt.classList.add('correct');
-                    }
-                });
-            }
-            
-            nextBtn.disabled = false;
-        }
-
         // Функция завершения урока
         function completeLesson() {
-            // Начислить XP
-            userXP += 10;
+            // Начислить XP (15 XP за урок)
+            const xpEarned = 15;
+            userXP += xpEarned;
             userXPEl.textContent = userXP;
             document.getElementById('totalXP').textContent = userXP;
             
@@ -1909,8 +2324,8 @@
             lessonModal.style.display = 'none';
             selectedOption = null;
             
-            // Показать уведомление об успехе
-            alert(`Поздравляем! Вы завершили урок "${currentSkill.title}" и получили 10 XP! Теперь у вас ${userXP} XP.`);
+            // Показываем уведомление об успехе
+            alert(`Поздравляем! Вы завершили урок "${currentSkill.title}" и получили ${xpEarned} XP! Теперь у вас ${userXP} XP.`);
         }
 
         // Функция переключения разделов
@@ -1967,9 +2382,9 @@
             
             // Обработчик кнопки "Далее" в уроке
             nextBtn.addEventListener('click', () => {
-                if (currentQuestion < totalQuestions) {
-                    currentQuestion++;
-                    showQuestion(currentQuestion);
+                if (currentQuestionIndex < currentSkill.questions.length - 1) {
+                    currentQuestionIndex++;
+                    showQuestion(currentQuestionIndex);
                     nextBtn.disabled = true;
                     selectedOption = null;
                 } else {
@@ -2091,4 +2506,4 @@
         });
     </script>
 </body>
-                                </html>
+    </html>
